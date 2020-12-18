@@ -3,7 +3,7 @@ function final(coins, value) {
         return a - b;
     })
     function count(arr) {
-        return arr.reduce((sum, coin) => sum + coin, 0) //[9,1,3,6,7,4,5]
+        return arr.reduce((sum, coin) => sum + coin, 0)
     }
     let perm = [];
     loop1: while (coins.length >= 1) {
@@ -26,9 +26,7 @@ function final(coins, value) {
         coins.pop();
     }
     let permutations = [];
-    if (count(perm) === value) {
-        permutations.push(perm);
-    }
+    permutations.push(perm);
     return permutations[0].length;
 }
 console.log('Number of coins', final([1, 3], 11));
