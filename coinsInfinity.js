@@ -23,10 +23,7 @@ function final(coins, value) {
                 break loop1;
             }
         }
-        coins.pop();
     }
-    let permutations = [];
-    permutations.push(perm);
-    return permutations[0].length;
+    return perm.length;
 }
 console.log('Number of coins', final([1, 3], 11));
