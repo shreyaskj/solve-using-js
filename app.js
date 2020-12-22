@@ -115,4 +115,19 @@ read.on('close', () => {
     add(arr);
 })
 
+// this one with REGEX 
+
+const input = process.stdin;
+input.setEncoding('utf8');
+const arr = [];
+async function read() {
+    for await(let data of input){
+        if(/\S/.test(data.toString())){
+            arr.push(data.toString().split(/\s+/)[0]);
+        }
+    }
+    console.log(arr);
+}
+read();
+
 
