@@ -20,3 +20,12 @@ function sumZero(arr) {
 console.log(sumZero([1, 2, 3, 4, 5]))
 
 /* Divide and Conquer - using Recursion*/
+
+function sum(arr, i = 0){
+    if(i === arr.length - 1) {
+        return arr[i]
+    } else {
+        return arr[i] + sum(arr, ++i) // Dont use i++ as each function execution context will be having different i variables 
+    }                                 // which will lead to Maximum call stack size exceeded error
+}
+console.log('sum', sum([1,3,4,9]));
